@@ -15,15 +15,15 @@ Follow these instructions to setup the project on your machine:
 
 **1. Clone Repo**
 
-````bash
-git clone https://github.com/hhilal123/dls-chat```
-
+```bash
+git clone https://github.com/hhilal123/dls-chat
+```
 
 **2. Install Requirements Using Conda**
 
 ```bash
 conda env create --name dls-chat python=3.11 pip
-````
+```
 
 ```bash
 conda activate dls-chat
