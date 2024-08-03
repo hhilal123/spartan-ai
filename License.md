@@ -1,6 +1,10 @@
 MIT License
 
+<<<<<<< Updated upstream
 Copyright (c) 2023 Mckay Wrigley
+=======
+Copyright (c) 2023 Hilal Hudson
+>>>>>>> Stashed changes
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

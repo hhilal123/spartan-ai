@@ -1,3 +1,9 @@
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+# dls-chat
+=======
+>>>>>>> Stashed changes
 # DLS-Chat
 
 This is a project started by De La Salle High School students in Concord, California. The goal is to build an effect chatbot that leverages OpenAI's finetuning API to be able to create a healthy student interactive AI chat.
@@ -40,4 +46,8 @@ Get OpenAI key and other relevant info from project manager.
 **4. Run locally**
 
 #To Do
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
