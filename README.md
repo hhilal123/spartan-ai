@@ -7,6 +7,7 @@ This is a project started by De La Salle High School students in Concord, Califo
 The project consists of the following compnents:
 
 **1. backend Python API (api) with OpenAI finetuning**
+
 **2. front end user interface (ui) using HTML, CSS, and JavaScript**
 
 # Setup
