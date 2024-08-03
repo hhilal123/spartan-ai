@@ -40,8 +40,3 @@ Get OpenAI key and other relevant info from project manager.
 **4. Run locally**
 
 #To Do
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
