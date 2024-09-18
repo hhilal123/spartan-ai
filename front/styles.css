@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #9FE2BF;
+}
+
+.login-container {
+    max-width: 600px;
+    margin: 100px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    height: 400px;
+}
+.login-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #000000;
+}
+.login-header h2 {
+    font-size: 1.5em;
+    color: #000000;
+    margin-top: 0;
+    padding: 10px;
+}
+/* .login-header p {
+    font-size: 1.2em;
+    color: #000000;
+    margin-top: 0;
+    padding: 10px;
+} */
+
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-form h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#login-form input {
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#login-form button {
+    width: 20%;
+    padding: 10px;
+    font-size: 1em;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background-color: #218838;
+}
+
+
+.signup-button {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signup-button button {
+    width: 20%;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #b3b4b3; /* Choose your preferred color */
+    color: rgb(54, 138, 57);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-button button:hover {
+    background-color: #393a3b; /* Slightly darker shade on hover */
+}
+
+.chat-container {
+    background-color: #fefefe;
+}
+/*Need to add additional styling for form, buttons, windows, etc  */
