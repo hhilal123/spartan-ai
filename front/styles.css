@@ -1,18 +1,28 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #9FE2BF;
+    font-family: Helvetica, sans-serif;
+    background-color: #1a1a1a;
 }
 
+/* Full Screen Container */
+.full-screen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures the container takes up the full viewport height */
+}
+
+/* Container */
 .login-container {
-    max-width: 600px;
-    margin: 100px auto;
     background: #fff;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 60px;
+    border: 100 solid hsl(155, 65%, 23%);
     text-align: center;
-    height: 400px;
+    box-shadow: #000000; /* Fix the box-shadow color*/
+    width: 500px;
 }
+/* Headings */
 .login-header {
     text-align: center;
     margin-bottom: 10px;
@@ -23,56 +33,69 @@ body {
     margin: 0;
     color: #000000;
 }
-.login-header h2 {
-    font-size: 1.5em;
-    color: #000000;
-    margin-top: 0;
-    padding: 10px;
-}
-/* .login-header p {
-    font-size: 1.2em;
-    color: #000000;
-    margin-top: 0;
-    padding: 10px;
-} */
 
 
+/* Log In Form */
 #login-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
-#login-form h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    color: #333;
+.input-group {
+   display: flex;
+   flex-direction: column;
+   gap: 7px;
 }
 
-#login-form input {
-    width: 40%;
-    padding: 10px;
-    margin-bottom: 15px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.input-group label{
+    font-weight: lighter;
+ }
+
+.input-group input{
+    font-size: 1.25rem;
+    padding: .5em;
+    background-color: #99d3ff;
+    border-radius: 20px;
 }
+
+.input-group .msg{
+    display: none;
+    font-size: .75rem;
+}
+
+.input-group.success .msg,
+.input-group.error .msg{
+    display: block;
+}
+
+.input-group.success .msg{
+    color: #2dc906;
+}
+
+.input-group.error .msg{
+    color: #e50808;
+}
+
 
 #login-form button {
     width: 20%;
     padding: 10px;
     font-size: 1em;
-    background-color: #28a745;
+    background-color: #23794e;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    align-items: center;
 }
 
 #login-form button:hover {
-    background-color: #218838;
+    background-color: #175033;
 }
 
+/* Sign Up Button */
 
 .signup-button {
     text-align: center;
@@ -81,20 +104,27 @@ body {
 
 .signup-button button {
     width: 20%;
-    padding: 10px 20px;
+    padding: 10px;
     font-size: 1em;
-    background-color: #b3b4b3; /* Choose your preferred color */
-    color: rgb(54, 138, 57);
+    background-color: #23794e;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    align-items: center;
 }
 
 .signup-button button:hover {
-    background-color: #393a3b; /* Slightly darker shade on hover */
+    background-color: #175033; /* Slightly darker shade on hover */
 }
+
+/* Chat Page Styles*/
 
 .chat-container {
     background-color: #fefefe;
 }
+
+/* Sign Up Page Styles */
+
+
 /*Need to add additional styling for form, buttons, windows, etc  */
