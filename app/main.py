@@ -7,25 +7,24 @@ import time
 import agent
 from datetime import date
 from difflib import IS_LINE_JUNK
-from functools import lru_cache
 from typing import Any, Optional
 import openai as aierror
 import openai
 from dotenv import load_dotenv
 from fastapi import BackgroundTasks, FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, StreamingResponse
-from langchain.agents import AgentType, initialize_agent
+from fastapi.responses import StreamingResponse
+from langchain.agents import AgentType
 from langchain.callbacks.base import BaseCallbackManager
 from langchain.callbacks.streaming_aiter import AsyncIteratorCallbackHandler
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-from langchain.callbacks.streaming_stdout_final_only import FinalStreamingStdOutCallbackHandler
+from langchain.callbacks.streaming_stdout_final_only
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.schema import LLMResult, OutputParserException
 from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.output_parsers import StrOutputParser
-from langchain_openai import AzureChatOpenAI, AzureOpenAIEmbeddings
+from langchain_openai import AzureChatOpenAI
 from pydantic import BaseModel
 from agent.util import CustomError, UtilFunctions
 from agent.chatprompt import (

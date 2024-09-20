@@ -7,9 +7,29 @@ body {
 /* Full Screen Container */
 .full-screen-container {
     display: flex;
+    flex-direction: column; /* Stack children vertically */
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ensures the container takes up the full viewport height */
+    height: 100%; 
+}
+
+
+h1{
+    margin-top: 5%;
+    position: relative;
+    z-index: 1;
+    color: #237c4e;
+    font-family: "Times New Roman", times, serif;
+    font-size: 75px;
+    padding-bottom: 20px;
+    padding-top: 0;
+}
+
+h2{
+    position: relative;
+    font-family: "Times New Roman", times, serif;
+    font-size: xx-large;
+    padding-top: 0;
 }
 
 /* Container */
@@ -21,6 +41,7 @@ body {
     text-align: center;
     box-shadow: #000000; /* Fix the box-shadow color*/
     width: 500px;
+    position: relative;
 }
 /* Headings */
 .login-header {
