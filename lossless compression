@@ -1,15 +1,1 @@
-If you use some common key words or phrases, the website, before plugging it into the AI to use, it can transform the phrases into symbols to make it use less tokens
-var huzzah;
 
-onEvent("whatever button is your enter button", "click", function( ) {
-  var any = getText("whatever they type into the search bar");
-  console.log(any);
-  if (any == "well the first thing") {
-    huzzah = "well" + "#";
-    console.log(any);
-    setText("where you send it to", any);
-  }
-});
-
-you can make any section of the text into any combo of variables because there is no limit to variables before the AI to make it as short as possible
-from this you can omit the non-necessary words and turn what people say into just the keywords
