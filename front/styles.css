@@ -147,5 +147,55 @@ h2{
 
 /* Sign Up Page Styles */
 
+/* WORK BELOW IS CHAPE */
 
-/*Need to add additional styling for form, buttons, windows, etc  */
+
+.signup-header h2 {
+    width: 300px;
+    font-size: large;
+    outline-color: #ffffff;
+    color: #c5ffd6;
+    margin-left: 20px;
+    }
+    
+    
+    #signup-form { /* "Enter your info txt" */
+       font-family: 'Courier New', Courier, monospace;
+       display: flex;
+       flex-direction: column;
+       margin-top: 40px;
+       align-items: center;
+    }
+    
+    
+    input[type=text] {
+       width: 60%;
+       padding: 12px 20px;
+       margin: 8px 0;
+       box-sizing: border-box;
+     }
+    
+    input[type=password] {
+        width: 60%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+    
+    
+    #signup-form h2 {
+       text-align: center;
+       margin-bottom: 30px;
+       color: #c5ffd6;
+    }
+    
+    
+    .login-button {
+       text-align: center;
+       align-items: center;
+       margin-top: 100px;
+       font-size:small;
+       color:#c5ffd6; 
+    }
+    /*Need to add additional styling for form, buttons, windows, etc  */
+    
