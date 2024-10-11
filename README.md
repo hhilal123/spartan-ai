@@ -20,19 +20,12 @@ Follow these instructions to setup the project on your machine:
 git clone https://github.com/hhilal123/dls-chat
 ```
 
-**2. Install Requirements Using Conda**
+**2. Install Requirements**
 
 ```bash
-conda env create --name dls-chat python=3.11 pip
+To Do
 ```
 
-```bash
-conda activate dls-chat
-```
-
-```bash
-pip install -r requirements.txt
-```
 
 **3. Add Requirements to the .env**
 
@@ -40,4 +33,6 @@ Get OpenAI key and other relevant info from project manager.
 
 **4. Run locally**
 
-#To Do
+```bash
+To Do
+```
