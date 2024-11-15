@@ -1,8 +1,7 @@
 import datetime
-from html.parser import HTMLParser
 import re
 import time
-import pandas as pd
+from html.parser import HTMLParser
 
 
 #############################################################
@@ -15,6 +14,7 @@ class CustomError(Exception):
         self.message = message
         self.error_type = error_type
         super().__init__(self.message)
+
 
 #############################################################
 # Create a custom HTML parser that inherits from HTMLParser
@@ -30,16 +30,19 @@ class NSHTMLParser(HTMLParser):
         self.result += data
 
 
-class UtilFunctions():
+class UtilFunctions:
 
     def __init__(self):
         return None
+
     #############################################################
     # Remove duplicate text from resoponse
     #############################################################
 
-    def add_separator_to_duplicate_text(self, input_text, separator="::split_response_here::"):
-        parts = input_text.split('\n')
+    def add_separator_to_duplicate_text(
+        self, input_text, separator="::split_response_here::"
+    ):
+        parts = input_text.split("\n")
         add_split_message = False
 
         for i in range(1, len(parts)):
@@ -49,8 +52,7 @@ class UtilFunctions():
                     parts.insert(i, separator)
                     add_split_message = True
 
-        return '\n'.join(parts)
-
+        return "\n".join(parts)
 
     #################################################
     # Get items with HTML
@@ -68,7 +70,7 @@ class UtilFunctions():
     # Check if string is valid
     #################################################
     def check_valid_string(self, string):
-        pattern = r'\{[^}]+\}'  # r"{[\w\\/]+}"  # r"{\w+}"
+        pattern = r"\{[^}]+\}"  # r"{[\w\\/]+}"  # r"{\w+}"
         if re.search(pattern, string):
             return False
         return True
@@ -78,7 +80,7 @@ class UtilFunctions():
     #################################################
     def is_junk_string(self, string):
         # Check for special characters more than 3
-        if len(re.findall(r'[^\w\s]', string)) > 7:
+        if len(re.findall(r"[^\w\s]", string)) > 7:
             return True
         # # Check for proper digits (length 1, 2, 3, or 10)
         # digits = re.findall(r'\b\d+\b', string)
@@ -103,7 +105,7 @@ class UtilFunctions():
         return True
 
     def process_link_on_linenumber(self, value):
-        match = re.search(r'\[(\d+)\]\((.*?)\)', value)
+        match = re.search(r"\[(\d+)\]\((.*?)\)", value)
         if match:
             number = match.group(1)
             url = match.group(2)
@@ -111,13 +113,12 @@ class UtilFunctions():
         else:
             return value
 
-
     #################################################
     # TXT TO HTML Format for LINK
     #################################################
     def text_to_html_with_link(self, text):
         # regex pattern [text](link) -- google
-        pattern = r'\[([^]]+)\]\(([^)]+)\)'
+        pattern = r"\[([^]]+)\]\(([^)]+)\)"
 
         matches = re.findall(pattern, text)
         for match in matches:
@@ -144,10 +145,13 @@ class UtilFunctions():
         milliseconds = elapsed_timedelta.microseconds // 1000
 
         # Format the elapsed time
-        elapsed_time_formatted = f"{hours:02d}:{minutes:02d}:{seconds:02d}.{milliseconds:03d}"
+        elapsed_time_formatted = (
+            f"{hours:02d}:{minutes:02d}:{seconds:02d}.{milliseconds:03d}"
+        )
 
         return elapsed_time_formatted
 
     def normalize_string(self, string: str):
         """Return an all lowercase string with all whitespace stripped."""
-        return string.lower().strip().replace(' ', '')
+        return string.lower().strip().replace(" ", "")
+

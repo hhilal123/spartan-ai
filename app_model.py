@@ -1,15 +1,15 @@
-import os
 import asyncio
 import io
 import json
+import os
 import re
 import time
-import agent
 from datetime import date
 from difflib import IS_LINE_JUNK
-from typing import Any, Optional
-import openai as aierror
+from typing import Any
+
 import openai
+import openai as aierror
 from dotenv import load_dotenv
 from fastapi import BackgroundTasks, FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -18,6 +18,9 @@ from langchain.agents import AgentType
 from langchain.callbacks.base import BaseCallbackManager
 from langchain.callbacks.streaming_aiter import AsyncIteratorCallbackHandler
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
+
+import agent
+
 from langchain.callbacks.streaming_stdout_final_only
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -26,11 +29,9 @@ from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import AzureChatOpenAI
 from pydantic import BaseModel
-from agent.util import CustomError, UtilFunctions
-from agent.chatprompt import (
-    RESPONSE_PROMPT
-)
 
+from agent.chatprompt import RESPONSE_PROMPT
+from agent.util import CustomError, UtilFunctions
 
 # loads local environment
 load_dotenv(".env") 
@@ -227,7 +228,7 @@ class Message(BaseModel):
 # main chat function for the managament and processing of the user input
 @app.post("/api/dls-chat/v1")
 async def chat(message: Message, request: Request, background_tasks: BackgroundTasks):
-
+    
     try:
         user_id = int(message.UserId)
     except Exception as err:
