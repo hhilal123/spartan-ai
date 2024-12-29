@@ -1,10 +1,10 @@
-DLS-Chat
+Spartan AI
 
-This is a project started by De La Salle High School students in Concord, California. The goal is to build an effect chatbot that leverages OpenAI's finetuning API to be able to create a healthy student interactive AI chat.
+Spartan AI was created by the De La Salle High School AI Club. The goal is to build a chatbot that leverages transformer technology to create a tutor-simulating chatbot that can edit student work.
 
 # Setup
 
-Follow these instructions to setup the project on your machine:
+Follow these instructions to set up the project on your machine:
 
 **1. Clone Repo**
 
@@ -14,7 +14,7 @@ git clone https://github.com/hhilal123/spartan-ai
 
 **2. Install Requirements**
 
-Navigate to the project folder and set up Python virtual environment.
+Navigate to the project folder and set up a Python virtual environment.
 
 ```zsh
 python3 -m venv .venv
