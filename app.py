@@ -1,20 +1,32 @@
-from datetime import timedelta
-from transformers import GPTNeoForCausalLM, GPT2Tokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 from flask import Flask, flash, redirect, render_template, request, session, url_for
+from chatprompt import RESPONSE_PROMPT
 
 app = Flask(__name__)
-tokenizer = GPT2Tokenizer.from_pretrained("EleutherAI/gpt-neo-1.3B")
-model = GPTNeoForCausalLM.from_pretrained("EleutherAI/gpt-neo-1.3B")
+model_name = "Qwen/Qwen2.5-0.5B-Instruct"
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype="auto",
+    device_map="auto"
+)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+pipe = pipeline("text-generation", model=model, tokenizer=tokenizer)
 
-@app.route("/chat", methods=["POST", "GET"])
+@app.route("/", methods=["POST", "GET"])
 def chat():
-    recent_chat = " "
+    display = ""
     if request.method == "POST":
-        chat = request.form["chat"]
-        user_input = tokenizer.encode(chat, return_tensors="pt")
-        output = model.generate(user_input, max_length=50)
-        recent_chat = tokenizer.decode(output[0], skip_special_tokens=True)
-    return render_template("chat.html", chat=recent_chat)
+        user_prompt = request.form["chat"]
+        messages = [
+            {"role": "system", "content": RESPONSE_PROMPT},
+            {"role": "user", "content": user_prompt}
+            ]
+        outputs = pipe(
+            messages,
+            max_new_tokens=512,
+        )
+        display = outputs[0]["generated_text"][-1]['content']
+    return render_template("chat.html", chat=display)
 
 
 if __name__ == "__main__":

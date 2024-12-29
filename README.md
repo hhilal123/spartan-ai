@@ -32,16 +32,10 @@ Install requirements
 pip install -r requirements.txt
 ```
 
-**3. Add Requirements to the .env**
+**3. Run locally**
 
-Create copy of .env.example file in project.
-
-Get relevant keys and info from the project manager.
-
-**4. Run locally**
-
-Run with Flask in the terminal.
+Run locally with flask in the terminal.
 
 ```zsh
-flask --app app run
+python app.py
 ```
