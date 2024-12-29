@@ -1,6 +1,6 @@
-Spartan AI
+# Introduction
 
-Spartan AI was created by the De La Salle High School AI Club. The goal is to build a chatbot that leverages transformer technology to create a tutor-simulating chatbot that can edit student work.
+We present Spartan AI, a chatbot created by the De La Salle High School AI Club that leverages transformer technology to create a tutor-simulating chatbot that can help edit student work.
 
 # Setup
 
