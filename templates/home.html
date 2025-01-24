@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<style>
+    button {
+        width: 20%;
+        text-align: center;
+        background-color: rgb(12, 162, 105);
+        color: white;
+        border-radius: 30%;
+        font-family: 'Times New Roman', Times, serif;
+        height: 50%;
+        font-size: 200%;
+    }
+    #button-container {
+        text-align: center;
+        margin-top: 5%;
+        height: 100px;
+    }
+</style>
+<h1>Spartan AI (In Progress) </h1>
+<p>
+    We present Spartan AI, a tool created by the De La Salle AI Club that leverages machine learning technology to help students with their writing.
+    <div id="button-container">
+        <a href="{{ url_for('chat') }}" style="text-decoration: none;">
+            <button>{{button_message}}</button>
+        </a>
+    </div>
+
+</p>
+
+
+{% endblock %}

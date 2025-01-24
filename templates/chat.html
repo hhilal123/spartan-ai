@@ -2,16 +2,111 @@
 {% block title %} Chat Page {% endblock %}
 
 {%block content%}
-<h1>Welcome </h1>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  button {
+      width: 10%;
+      text-align: center;
+      background-color: rgb(155, 155, 155);
+      color: rgb(0, 0, 0);
+      border-radius: 30%;
+      font-family: 'Times New Roman', Times, serif;
+      height: 50%;
+      font-size: 100%;
+    }
+  #button-container {
+      margin-top: 10px;
+      text-align: left;
+      height: 100%;
+  }
 
-<form action="#" method="post">
-  <p>Please Enter Your Chat</p>
-  <p><input type="text" name="chat"/></p>
-  <p><input type="submit" value="submit" /></p>
-</form>
+  .chat-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  }
+  .chat-message {
+    margin: 5px 0;
+  }
+  .user-message {
+    text-align: left;
+    color: blue;
+  }
+  .ai-message {
+    text-align: right;
+    color: green;
+  }
 
-<p>Most Recent Chat: </p>
-<p>{{chat}}</p>
+  .container {
+    text-align: center;
+    width: 100%;
+    width: 600px;
+    height: 400px;
+  }
+
+  .container textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    width: 100%;
+    height: 200px;
+  }
+
+  .container input[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+</style>
+
+<div id="button-container">
+  <a href="{{ url_for('logout') }}" style="text-decoration: none;">
+      <button>Logout</button>
+  </a>
+</div>
+
+<div id="button-container">
+  <a href="{{ url_for('home') }}" style="text-decoration: none;">
+      <button>Home</button>
+  </a>
+</div>
+
+<h1>Welcome to Spartan AI</h1>
+
+<div class="chat-box">
+  {% for message in chat_history %}
+    <div class="chat-message user-message"><strong>You:</strong> {{ message.user }}</div>
+    <div class="chat-message ai-message"><strong>Spartan AI:</strong> {{ message.ai }}</div>
+  {% endfor %}
+</div>
+
+<div class="container">
+  <form action="/chat" method="post" onsubmit="return validateWordLimit();">
+    <textarea name="chat" placeholder="Enter message here" style="resize: none;" oninput="enforceWordLimit(this)" onkeydown="if (event.key === 'Enter'){ event.preventDefault(); this.form.submit(); }"></textarea>
+    <p><input type="submit" value="Enter" /></p>
+  </form>
+</div>
+
+<script>
+  function enforceWordLimit(textarea) {
+    const maxWords = 100;
+    const words = textarea.value.split(/\s+/).filter(word => word.length > 0);
+    if (words.length > maxWords) {
+      textarea.value = words.slice(0, maxWords).join(" ");
+    }
+  }
+</script>
 
 {% endblock %}
 
